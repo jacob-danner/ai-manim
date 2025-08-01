@@ -1,0 +1,3 @@
+- setup telemetry
+- run model and see where it is going wrong
+- run optimizer
