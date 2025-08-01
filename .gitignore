@@ -13,3 +13,7 @@ wheels/
 # Other
 .env
 media/texts
+
+# Telemetry data
+telemetry/test_traces.jsonl
+telemetry/traces.jsonl

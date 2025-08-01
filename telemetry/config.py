@@ -120,8 +120,7 @@ def setup_telemetry(
     # Add file exporter if enabled
     if export_to_file:
         if not file_path:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            file_path = f"telemetry/traces/traces_{timestamp}.jsonl"
+            file_path = "telemetry/traces.jsonl"
 
         file_exporter = FileSpanExporter(file_path)
         tracer_provider.add_span_processor(SimpleSpanProcessor(file_exporter))
