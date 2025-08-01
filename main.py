@@ -1,6 +1,6 @@
 import dspy
 import subprocess
-from telemetry_config import setup_telemetry, shutdown_telemetry, get_telemetry_config
+from telemetry.config import setup_telemetry, shutdown_telemetry, get_telemetry_config
 
 
 class Pipeline(dspy.Module):

@@ -6,7 +6,7 @@ Tests Phoenix instrumentation and file export without running the full pipeline.
 import os
 import time
 import dspy
-from telemetry_config import setup_telemetry, shutdown_telemetry, get_telemetry_config
+from telemetry.config import setup_telemetry, shutdown_telemetry, get_telemetry_config
 
 
 def test_telemetry():

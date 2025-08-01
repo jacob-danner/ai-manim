@@ -18,9 +18,9 @@ Two-stage approach to automated Manim code generation:
 - `uv run manim -s visualization.py` - Run manim
 
 ## Telemetry Commands
-- `uv run python test_telemetry.py` - Test telemetry setup and instrumentation
+- `uv run python tests/test_telemetry_integration.py` - Test telemetry setup and instrumentation (integration test)
 - `uv run python main.py` - Run pipeline with telemetry (traces saved to `telemetry/traces/`)
-- `uv run python analyze_traces.py` - Analyze traces with DuckDB
+- Open `telemetry/analyze_traces.ipynb` - Minimal notebook to analyze traces with DuckDB
 
 ### Telemetry Configuration (Environment Variables)
 - `DISABLE_TELEMETRY=true` - Disable all telemetry
