@@ -1,6 +1,9 @@
 import dspy
 import subprocess
-from telemetry.config import setup_telemetry, shutdown_telemetry, get_telemetry_config
+
+from telemetry_config import setup_telemetry
+
+setup_telemetry()
 
 
 class Pipeline(dspy.Module):
@@ -38,19 +41,10 @@ def run_pipeline(source_diagram_file: str, output_file: str):
 
 
 if __name__ == "__main__":
-    # Set up telemetry
-    config = get_telemetry_config()
-    tracer_provider = setup_telemetry(**config)
+    lm = dspy.LM(
+        model="openrouter/google/gemini-2.5-flash",
+        max_tokens=20000,
+    )
+    dspy.configure(lm=lm)
 
-    try:
-        lm = dspy.LM(
-            model="openrouter/google/gemini-2.5-flash",
-            max_tokens=20000,
-        )
-        dspy.configure(lm=lm)
-
-        run_pipeline("./source_diagrams/1.png", "visualization.py")
-    finally:
-        # Clean up telemetry
-        if tracer_provider:
-            shutdown_telemetry()
+    run_pipeline("./source_diagrams/2.png", "visualization.py")
